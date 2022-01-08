@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calories</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            --bs-bg-opacity: 1;
+            background-color: rgba(248, 249, 250, var(--bs-bg-opacity));
+        }
+
+        .carousel-indicators [data-bs-target] {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 30px;
+            height: 3px;
+            padding: 0;
+            margin-right: 3px;
+            margin-left: 3px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            opacity: 0.5;
+            transition: opacity 0.6s ease;
+        }
+    </style>
+</head>
+<script>
+    function Calories() {
+        //早餐
+        var oneb = parseInt(document.getElementById("Calories1").value);
+        var twob = parseInt(document.getElementById("Calories2").value);
+        var threeb = parseInt(document.getElementById("Calories3").value);
+        if (isNaN(oneb)) { oneb = 0; }
+        if (isNaN(twob)) { twob = 0; }
+        if (isNaN(threeb)) { threeb = 0; }
+        var total1 = oneb + twob + threeb;
+        //午餐
+        var onel = parseInt(document.getElementById("Calories4").value);
+        var twol = parseInt(document.getElementById("Calories5").value);
+        var threel = parseInt(document.getElementById("Calories6").value);
+        if (isNaN(onel)) { onel = 0; }
+        if (isNaN(twol)) { twol = 0; }
+        if (isNaN(threel)) { threel = 0; }
+        var total2 = onel + twol + threel;
+        //點心
+        var oner = parseInt(document.getElementById("Calories7").value);
+        var twor = parseInt(document.getElementById("Calories8").value);
+        var threer = parseInt(document.getElementById("Calories9").value);
+        if (isNaN(oner)) { oner = 0; }
+        if (isNaN(twor)) { twor = 0; }
+        if (isNaN(threer)) { threer = 0; }
+        var total3 = oner + twor + threer;
+        //晚餐
+        var oned = parseInt(document.getElementById("Calories10").value);
+        var twod = parseInt(document.getElementById("Calories11").value);
+        var threed = parseInt(document.getElementById("Calories12").value);
+        if (isNaN(oned)) { oned = 0; }
+        if (isNaN(twod)) { twod = 0; }
+        if (isNaN(threed)) { threed = 0; }
+        var total4 = oned + twod + threed;
+        //宵夜
+        var onen = parseInt(document.getElementById("Calories13").value);
+        var twon = parseInt(document.getElementById("Calories14").value);
+        var threen = parseInt(document.getElementById("Calories15").value);
+        if (isNaN(onen)) { onen = 0; }
+        if (isNaN(twon)) { twon = 0; }
+        if (isNaN(threen)) { threen = 0; }
+        var total5 = onen + twon + threen;
+        //全部熱量
+        var total = total1 + total2 + total3 + total4 + total5;
+
+        alert('你早餐的總熱量為: ' + total1 + ' kals' + '\n' + '你午餐的總熱量為: ' + total2 + ' kals' + '\n' + '你點心的總熱量為: ' + total3 + ' kals' + '\n' + '你晚餐的總熱量為: ' + total4 + ' kals' + '\n' + '你宵夜的總熱量為: ' + total5 + ' kals' + '\n' + '你一天的總熱量為: ' + total + ' kals');
+    }
+</script>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="home.html">卡路里計算</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="add.html">BMI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Calories.html">熱量計算</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../students">運動紀錄</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top:20px; ">
+        <table border="1" class="table table-bordered" style="border:3px #cccccc solid;" cellpadding="10" >
+            <tr>
+                <td>
+                    <div>
+                        <p>早餐: </p>
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories1" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories2" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories3" /> kal</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p>點心: </p>
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories7" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories8" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories9" /> kal</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <p>午餐: </p>
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories4" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories5" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories6" /> kal</p>
+
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <p>宵夜: </p>
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories13" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories14" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories15" /> kal</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <p>晚餐: </p>
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories10" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories11" /> kal</p>
+
+                        <p>食物品項: <input type="text" id="foodname" />
+                            &nbsp;
+                            熱量: <input type="text" id="Calories12" /> kal</p>
+                    </div>
+                </td>
+                <td>
+                    <input type="button" value="Total計算" onclick="Calories()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">瑋志出品，必是精品</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
