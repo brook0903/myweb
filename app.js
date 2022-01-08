@@ -15,6 +15,6 @@ app.use('/node_modules/', express.static('./node_modules/'));
 app.use('/public/', express.static('./public/'));
 
 
-app.listen(3000, function () {
-    console.log('Running at port 3000!');
+app.listen(8000, function () {
+    console.log('Running at port 8000!');
 })
